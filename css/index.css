@@ -179,7 +179,7 @@
 /*樓層區*/
 .box-hd {
 	height: 30px;
-	background-color: pink;
+	background-color: white;
 	border-bottom: 2px solid #c81623;
 	margin-top: 25px;
 }
@@ -206,6 +206,7 @@
 }
 .w209 {
 	width: 209px;
+	background-color: #f9f9f9;
 }
 .w329 {
 	width: 329px;
@@ -224,8 +225,21 @@
 }
 
 .tab-con-item {
-	
+	border-bottom: 1px solid #ccc;
 }
+.tab-con-list{
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.tab-con-list li {
+	width: 86px;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #ccc;
+	margin-left: 10px;
+	text-align: center;
+}
+
 
 
 
