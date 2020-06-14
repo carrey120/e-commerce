@@ -1,0 +1,45 @@
+.style-red {
+    color: #c81523;
+}
+.sk{
+	position: absolute;
+	top: 40px;
+	left: 185px;
+    border-left: 2px solid #b1191a;
+    padding: 5px 14px;
+}
+.sk a{
+	display: block;
+	width: 175px;
+	height: 56px;
+	background: url(../upload/sk.png) no-repeat;
+	font-size: 0;
+}
+
+.sk_list li {
+    float: left;
+    line-height: 45px;
+    margin: 0 30px;
+}
+.sk_list li a {
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+    
+}
+.sk_list li a:hover {
+    color: #c81523;
+}
+.sk_con li {
+    float: left;
+    line-height: 45px;
+    margin: 0 20px;
+}
+.sk_con li a {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'icomoon';
+}
+.sk_con li a:hover {
+    color: #c81523;
+}
