@@ -49,7 +49,8 @@
 }
 
 .current {
-	background-color: #fff;
+	background-color:#c81623;
+	color: white;
 }
 .news {
 	height: 163px;
@@ -222,11 +223,11 @@
 .tab-con li {
 	float: left;
 	height: 360px;
-}
-
-.tab-con-item {
 	border-bottom: 1px solid #ccc;
 }
+
+
+
 .tab-con-list{
 	overflow: hidden;
 	margin-bottom: 15px;
@@ -238,6 +239,35 @@
 	border-bottom: 1px solid #ccc;
 	margin-left: 10px;
 	text-align: center;
+	
+}
+.box-bd li {
+	overflow: hidden;
+}
+.box-bd img {
+	transition: all .5s;
+	
+}
+.box-bd img:hover {
+	margin-left: 8px;
+	
+}
+/* 電梯導航 */
+.fixedtool {
+	position: fixed;
+	top: 183px;
+	left: 50%;
+	margin-left: -676px;
+	width: 66px;
+	background-color: white;
+}
+.fixedtool li {
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	font-size: 12px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
 }
 
 

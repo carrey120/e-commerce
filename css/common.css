@@ -175,13 +175,18 @@
 	line-height: 31px;
 	margin-left: 1px;
 	padding: 0 10px;
+	transition: all .5s;
 }
 
 .menu_item:hover {
 	background-color: #fff;
+	padding-left: 20px;
 }
 .menu_item:hover a {
 	color: #c81623;
+}
+.menu_item:hover i{
+	color: #ccc;
 }
 .menu_item a {
 	font-style: 14px;
