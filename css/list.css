@@ -67,7 +67,7 @@
     font-size: 14px;
     color: #666;
     font-weight: normal;
-    padding: 10px;
+    padding: 7px 10px;
 }
 .sk_goods_price {
     padding: 0 10px;
@@ -86,7 +86,7 @@
 }
 .bar {
     display: inline-block;
-    width: 130px;
+    width: 97px;
     height: 10px;
     border: 1px solid #b1191a;
     vertical-align: middle;
