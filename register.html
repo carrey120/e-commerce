@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="shortcut icon" href="favicon.ico"/>
+
+    <script src="js/index.js"></script>
 </head>
 <body>
     <div class="w">
@@ -45,14 +47,16 @@
                                 手機號碼格式不正確，請從新輸入
                             </span> -->
                         </li>
+                        
+
+
                         <li>
                             <label for="password">登陸密碼：</label>
-                            <input type="text" class="inp" id="password">
-                            <span class="success">
-                                <i class="success_icon"></i> 
-                                恭喜你輸入正確
-                            </span>
+                            <input type="password" class="ipt" >
+                            <p class="message">請輸入6～16位密碼</p>
                         </li>
+
+
                         <li class="safe">
                             安全程度 
                             <em class="week">弱</em>
@@ -110,6 +114,22 @@
 	</div>
 	<!-- footer end -->
     </div>
+
+    <script>
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+
+        ipt.onblur = function() {
+            if (this.value.length < 6 || this.value.length > 16) {
+                // console.log('wrong');
+                message.className = 'message wrong';
+                message.innerHTML = '你輸入的位數不對要求6～6位';
+            }else {
+                message.className = 'message right';
+                message.innerHTML = '你輸入的位數正確';
+            }
+        }
+    </script>
     
 </body>
 </html>

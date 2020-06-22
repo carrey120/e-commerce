@@ -60,7 +60,7 @@ $(function(){
         // after focus, change the color of text 
         this.style.color = '#333';
     }
-    
+
     text.onblur = function() {
         //  console.log('unfocus');
         if(text.value === '') {
@@ -68,6 +68,17 @@ $(function(){
         }
 
         this.style.color = '#ccc';
+    }
+
+    var input = document.querySelector('.ipt');
+    var message = document.querySelector('.message');
+
+    input.onblur = function() {
+        if (this.value.length < 6 || this.value.length > 16) {
+            // console.log('wrong');
+            message.className = 'message wrong';
+            message.innerHTML = '你輸入的位數不對要求6～6位';
+        }
     }
 
 

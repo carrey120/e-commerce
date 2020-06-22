@@ -47,7 +47,8 @@
     line-height: 36px;
     text-align: right;
 }
-.reg_form .inp {
+.reg_form .inp,
+.reg_form .ipt {
     width: 238px;
     height: 34px;
     border: 1px solid #ccc;
@@ -66,6 +67,21 @@
     background: url(../img/error.png) no-repeat;
     margin-top: -2px;
 }
+.message {
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    padding-left: 19px;
+}
+.wrong {
+    color: red;
+    background: url(../img/wrong.png) no-repeat; 
+}
+.right {
+    color: green;
+    background: url(../img/right.png) no-repeat;
+}
+
 .success{
     color: #40b83f;
     margin-left: 10px;
