@@ -43,11 +43,34 @@ $(function(){
 
     })
 
+    // 精靈圖 
     var icon = document.querySelectorAll('.service_ico');
     for(var i = 0; i < icon.length; i++) {
         var index = i * 44;
         icon[i].style.backgroundPosition = '0 -' + index + 'px';
     };
+
+    // input 光標點击後input val消失 
+    var text = document.querySelector('.text');
+    text.onfocus = function() {
+        // console.log('focus');
+        if(text.value === 'search content'){
+            this.value = '';
+        }
+        // after focus, change the color of text 
+        this.style.color = '#333';
+    }
+    
+    text.onblur = function() {
+        //  console.log('unfocus');
+        if(text.value === '') {
+            this.value = 'search content';
+        }
+
+        this.style.color = '#ccc';
+    }
+
+
 
 
 });
