@@ -43,5 +43,11 @@ $(function(){
 
     })
 
+    var icon = document.querySelectorAll('.service_ico');
+    for(var i = 0; i < icon.length; i++) {
+        var index = i * 44;
+        icon[i].style.backgroundPosition = '0 -' + index + 'px';
+    };
+
 
 });
