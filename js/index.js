@@ -70,16 +70,28 @@ $(function(){
         this.style.color = '#ccc';
     }
 
-    var input = document.querySelector('.ipt');
-    var message = document.querySelector('.message');
-
-    input.onblur = function() {
-        if (this.value.length < 6 || this.value.length > 16) {
-            // console.log('wrong');
-            message.className = 'message wrong';
-            message.innerHTML = '你輸入的位數不對要求6～6位';
+    var lis = document.querySelectorAll('.circle-li');
+    for(var i = 0; i<lis.length; i++){
+        lis[i].onmouseover = function() {
+            for(var i=0; i<lis.length; i++){
+                lis[i].className = 'circle-li';
+            }
+            this.className = 'current circle-li';
         }
     }
+
+    var nav = document.querySelector('.nav_shortcut');
+    var lis = nav.children;
+    for(var i=0; i<lis.length; i++){
+        lis[i].onmouseover = function () {
+            this.children[2].style.display = 'block';
+
+        }
+        lis[i].onmouseout = function () {
+            this.children[2].style.display = 'none';
+        }
+    }
+    
 
 
 

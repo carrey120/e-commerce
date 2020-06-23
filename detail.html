@@ -454,7 +454,7 @@
                     </ul>
                 </div>
                 <div class="detail_tab_con">
-                    <div class="item">
+                    <div class="item" style="display: block;">
                         <ul class="item_info">
                             <li>分辨率：1920*1080(FHD)</li>
                             <li>後置攝像頭：1200萬像素</li>
@@ -477,10 +477,10 @@
                         <img src="upload/detail_img2.jpg" alt="">
                         <img src="upload/detail_img3.jpg" alt="">
                     </div>
-                    <!-- <div class="item">規格與包裝</div>
+                    <div class="item">規格與包裝</div>
                     <div class="item">售後保障</div>
                     <div class="item">商品評價（50000）</div>
-                    <div class="item">手機社區</div> -->
+                    <div class="item">手機社區</div>
                 </div>
             </div>
         </div>
@@ -610,6 +610,31 @@
 		</div>
 	</div>
 	<!-- footer end -->
+
+	<script>
+		var tab_list = document.querySelector('.detail_tab_list');
+		var list = tab_list.querySelectorAll('li');
+		var items = document.querySelectorAll('.item');
+
+		for (var i=0; i<list.length; i++) {
+
+			list[i].setAttribute('index', i);
+
+			list[i].onmouseover = function() {
+				for(var i=0; i<list.length; i++){
+					list[i].className = '';
+				}
+				this.className = 'current';
+
+				var index = this.getAttribute('index');
+				for(var i=0; i<items.length; i++){
+					items[i].style.display = 'none';
+				}
+
+				items[index].style.display = 'block';
+			}
+		}
+	</script>
     
 </body>
 </html>

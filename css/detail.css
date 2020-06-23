@@ -234,7 +234,9 @@
 	border-bottom: 1px solid #ccc;
 }
 
-
+.item {
+    display: none;
+}
 
 
 .tab-con-list{
