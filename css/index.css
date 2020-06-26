@@ -149,7 +149,29 @@
 	height: 15px;
 	background: url(../img/jian.jpg) no-repeat;
 }
-
+.con {
+	display: none;
+	position: absolute;
+	top: -40px;
+	width: 445px;
+	border: 1px solid rgba(0,0,0,.2);
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+	padding: 5px 0;
+	font-size: 18px;
+	line-height: 20px;
+	color: #333;
+}
+.con::before {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 28px;
+	left: 18px;
+	border: 8px solid #000;
+	border-style: solid dashed dashed;
+	border-color: #fff transparent transparent;
+}
 /*推薦模块*/
 .recommend{
 	background-color: pink;

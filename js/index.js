@@ -91,6 +91,42 @@ $(function(){
             this.children[2].style.display = 'none';
         }
     }
+
+
+    // keyup to focus 
+    var search = document.querySelector('.text');
+    document.addEventListener('keyup', function(e) {
+        //console.log(e.keyCode);   取得S鍵代碼
+        if(e.keyCode === 83) {
+            search.focus();
+        }
+    })
+
+
+    // search block 字體輸入時字體放大顯示效果 
+    var con = document.querySelector('.con');
+    var con_input = document.querySelector('.con_text');
+
+    con_input.addEventListener('keyup', function() {
+        // console.log('1111');
+        if(this.value==''){
+            con.style.display = 'none';
+        }else {
+            con.style.display = 'block';
+            con.innerHTML = this.value;
+        }
+    })
+
+    // 失去焦點，就display none 
+    con_input.addEventListener('blur' ,function() {
+        con.style.display = 'none';
+    })
+    // 得到焦點，就display block 
+    con_input.addEventListener('focus' ,function() {
+        if(this.value !== '') {
+            con.style.display = 'block';
+        }
+    })
     
 
 
