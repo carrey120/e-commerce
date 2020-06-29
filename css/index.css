@@ -7,9 +7,19 @@
 
 .focus {
 	position: relative;
-	width: 720px;
+	width: 721px;
 	height:455px;
 	background-color: purple;
+	overflow: hidden;
+}
+.focus ul {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 600%;
+}
+.focus ul li {
+	float: left;
 }
 .newsflash {
 	width: 250px;
@@ -30,6 +40,7 @@
 }
 .arrow-l,
 .arrow-r {
+	display: none;
 	position: absolute;
 	top: 50%;
 	margin-top: -20px;
@@ -41,6 +52,7 @@
 	color: #fff;
 	font-family: 'icomoon';
 	font-size: 18px;
+	z-index: 2 ;
 }
 .arrow-r {
 	right: 0;
@@ -307,6 +319,7 @@
 }
 
 
+ 
 
 
 

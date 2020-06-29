@@ -43,6 +43,9 @@ $(function(){
 
     })
 
+    
+
+
     // 精靈圖 
     var icon = document.querySelectorAll('.service_ico');
     for(var i = 0; i < icon.length; i++) {
@@ -70,27 +73,113 @@ $(function(){
         this.style.color = '#ccc';
     }
 
-    var lis = document.querySelectorAll('.circle-li');
-    for(var i = 0; i<lis.length; i++){
-        lis[i].onmouseover = function() {
-            for(var i=0; i<lis.length; i++){
-                lis[i].className = 'circle-li';
+
+
+    // 輪播圖 
+    var arrow_l = document.querySelector('.arrow-l');
+    var arrow_r = document.querySelector('.arrow-r');
+    var focus = document.querySelector('.focus');
+    var focusWidth = focus.offsetWidth;
+
+    focus.addEventListener('mouseover', function() {
+        arrow_l.style.display = 'block';
+        arrow_r.style.display = 'block';
+        clearInterval(timer);
+        timer = null;
+    });
+    focus.addEventListener('mouseout', function() {
+        arrow_l.style.display = 'none';
+        arrow_r.style.display = 'none';
+        timer = setInterval(function() {
+            arrow_r.click(); 
+        }, 2000) 
+    });
+
+    var ul = focus.querySelector('ul');
+    var ol = focus.querySelector('.circle');
+    for(var i = 0; i < ul.children.length; i++) {
+        var li = document.createElement('li');
+        ol.appendChild(li);
+        li.setAttribute('index', i);
+
+        li.addEventListener('click', function() {
+            for (var i=0; i<ol.children.length; i++){
+                ol.children[i].className = '';
             }
-            this.className = 'current circle-li';
+            this.className = 'current';
+            var index = this.getAttribute('index');
+            // num = index;
+            // circle = index;
+            num = circle = index;
+            animate(ul, -index * focusWidth); 
+        })
+    }
+    ol.children[0].className = 'current';
+    var first = ul.children[0].cloneNode(true);
+    ul.appendChild(first);
+
+    var num = 0;
+    var circle = 0;
+    var flag = true;
+
+    arrow_r.addEventListener('click', function() {
+        if(flag) {
+            flag = false;
+            if(num == ul.children.length-1) {
+                ul.style.left = 0;
+                num = 0;
+            }
+            num++;
+            animate(ul, -num*focusWidth, function() {
+                flag = true;
+            });
+            circle++;
+            if (circle == ol.children.length){
+                circle = 0;
+            }
+            circleChange();
         }
+    })
+
+
+    arrow_l.addEventListener('click', function() {
+        if(flag) {
+            flag = false;
+            if(num == 0) {
+                num = ul.children.length-1;
+                ul.style.left = -num * focusWidth + 'px';
+            }
+            num--;
+            animate(ul, -num*focusWidth, function() {
+                flag = true;
+            });
+            circle--;
+            // if (circle < 0){
+            //     circle = ol.children.length - 1;
+            // }
+            circle = circle < 0 ? ol.children.length - 1 : circle;
+            circleChange();
+        }
+        
+        
+    });
+    function circleChange() {
+        for(var i=0; i<ol.children.length; i++){
+            ol.children[i].className = '';
+        }
+        ol.children[circle].className = 'current';
     }
 
-    var nav = document.querySelector('.nav_shortcut');
-    var lis = nav.children;
-    for(var i=0; i<lis.length; i++){
-        lis[i].onmouseover = function () {
-            this.children[2].style.display = 'block';
+    var timer = setInterval(function() {
+        arrow_r.click(); 
+    }, 2000)
+    
+     
 
-        }
-        lis[i].onmouseout = function () {
-            this.children[2].style.display = 'none';
-        }
-    }
+
+
+
+
 
 
     // keyup to focus 
